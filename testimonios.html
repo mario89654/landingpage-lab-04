@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonios - Knives</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .highlight {
+      background-color: #b4b475 !important;
+      transition: background-color 0.5s ease;
+    }
+    aside {
+  margin-left: -100px; /* Ajusta el valor según necesites */
+}
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <!-- Navegación -->
+  <header class="bg-gray-900 text-white p-4 fixed top-0 left-0 w-full z-50">
+    <nav class="container mx-auto flex justify-between items-center">
+      <a href="./index.html" class="text-2xl font-bold">Knives</a>
+       
+      <button id="menu-button" class="md:hidden text-white focus:outline-none text-2xl">
+        ☰
+      </button>
+      <!-- Menú de navegación -->
+      <ul id="menu" class="hidden md:flex space-x-6">
+         <li><a href="index.html" class="hover:text-gray-700">Inicio</a></li>
+          <li><a href="compra.html" class="hover:text-gray-700">Compra</a></li>
+          <li><a href="testimonios.html" class="hover:text-gray-700">Testimonios</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <script>
+    document.getElementById('menu-button').addEventListener('click', function() {
+      document.getElementById('menu').classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- Contenido principal -->
+  <div class="container mx-auto px-6 py-10 flex flex-col md:flex-row mt-16">
+    <!-- Sidebar -->
+    <aside class="w-full md:w-1/4 bg-white p-4 shadow-lg rounded-lg text-white" style="background-image: url('https://images.pexels.com/photos/14461584/pexels-photo-14461584.jpeg?auto=compress&cs=tinysrgb&w=600');background-size: cover; background-position: center; backdrop-filter: brightness(0.7);" >
+      <h2 class="text-lg olor:font-bold mb-4"> Testimonios</h2>
+      <button id="toggle-filters" class="w-full text-left px-4 py-2 hover:bg-gray-200 hover:bg-opacity-50 rounded">Filtrar:</button>
+      <ul id="filter-menu" class="hidden mt-2">
+        <li><button class="block w-full text-left px-4 py-2 hover:bg-gray-200 hover:bg-opacity-50 rounded" onclick="filtrar('positivo')">Positivos</button></li>
+        <li><button class="block w-full text-left px-4 py-2 hover:bg-gray-200 hover:bg-opacity-50 rounded" onclick="filtrar('negativo')">Negativos</button></li>
+        <li><button class="block w-full text-left px-4 py-2 hover:bg-gray-200 hover:bg-opacity-50 rounded" onclick="filtrar('reciente')">Recientes</button></li>
+      </ul>
+    </aside>
+
+    <script>
+      document.getElementById('toggle-filters').addEventListener('click', function() {
+        document.getElementById('filter-menu').classList.toggle('hidden');
+      });
+
+      function filtrar(tipo) {
+        document.querySelectorAll('.testimonio').forEach(testimonio => {
+          testimonio.classList.remove('highlight');
+        });
+        document.querySelectorAll('.' + tipo).forEach(testimonio => {
+          testimonio.classList.add('highlight');
+        });
+      }
+    </script>
+
+    <!-- Sección de testimonios -->
+    <section class="w-3/4 pl-6">
+      <h2 class="text-3xl font-bold text-center mb-6">Opiniones de nuestros usuarios</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-sm mx-auto md:max-w-none">
+
+        <div class="testimonio positivo bg-white p-4 shadow-lg rounded-lg hover:scale-105 transition-transform">
+          <p class="text-center font-semibold">"Excelente servicio, muy recomendado."</p>
+          <img class="w-full h-48 object-cover rounded-lg mt-4" src="https://images.imagenmia.com/model_version/c5e4533b56d3e5048df34eec31df7cfa2f0a10f477886af442a2fb372569324e/1723815980081-output.jpg" alt="Testimonio Juan Pérez">
+          <span class="block text-center mt-2">- Juan Pérez</span>
+        </div>
+        <div class="testimonio negativo bg-white p-4 shadow-lg rounded-lg hover:scale-105 transition-transform">
+          <p class="text-center font-semibold">"Buena experiencia, aunque podría mejorar en tiempos de respuesta."</p>
+          <img class="w-full h-48 object-cover rounded-lg mt-4" src="https://images.imagenmia.com/examples/optimized_images/1727123808024-2797583d-777e-49a8-bfcf-8865b67fcef2.webp" alt="Testimonio María Gómez">
+          <span class="block text-center mt-2">- María Gómez</span>
+        </div>
+        <div class="testimonio positivo bg-white p-4 shadow-lg rounded-lg hover:scale-105 transition-transform">
+          <p class="text-center font-semibold">"Muy satisfecho con mi compra, el filo se mantiene por mucho tiempo."</p>
+          <img class="w-full h-48 object-cover rounded-lg mt-4" src="https://images.imagenmia.com/examples/optimized_images/1727124804415-23e0a766-6c63-4b21-b203-60c3df48e811.webp" alt="Testimonio Andrea Martínez">
+          <span class="block text-center mt-2">- Andrea Martínez</span>
+        </div>
+        <div class="testimonio positivo bg-white p-4 shadow-lg rounded-lg hover:scale-105 transition-transform">
+          <p class="text-center font-semibold">"Los detalles y acabados son espectaculares, vale cada centavo."</p>
+          <img class="w-full h-48 object-cover rounded-lg mt-4" src="https://images.imagenmia.com/examples/optimized_images/1727125872853-48f67e1c-e99a-4c78-999c-966ee861627b.webp"
+            alt="Testimonio Sofía Herrera">
+          <span class="block text-center mt-2">- Sofía Herrera</span>
+        </div>
+        <div class="testimonio negativo bg-white p-4 shadow-lg rounded-lg hover:scale-105 transition-transform">
+          <p class="text-center font-semibold">"No me gustó la atención al cliente."</p>
+          <img class="w-full h-48 object-cover rounded-lg mt-4" src="https://images.imagenmia.com/example_images/1727636983806-7ff4453d-8e59-47e8-ae25-7e498ce4f5f5.webp" alt="Testimonio Carlos López">
+          <span class="block text-center mt-2">- Carlos López</span>
+        </div>
+        <div class="testimonio reciente bg-white p-4 shadow-lg rounded-lg hover:scale-105 transition-transform">
+          <p class="text-center font-semibold">"Increíble calidad, superó mis expectativas en todos los aspectos."</p>
+          <img class="w-full h-48 object-cover rounded-lg mt-4" src="https://www.ifoto.ai/_nuxt/img/headshot-9.5052a03.webp" alt="Testimonio Marta López">
+          <span class="block text-center mt-2">- Marta López</span>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="bg-gray-900 text-white text-center p-4 mt-10">
+    <p>&copy; 2025 Knives. Todos los derechos reservados.</p>
+    <nav>
+      <ul class="flex justify-center space-x-4">
+        <li><a href="#" class="hover:text-gray-400">Aviso legal</a></li>
+        <li><a href="#" class="hover:text-gray-400">Política de privacidad</a></li>
+        <li><a href="#" class="hover:text-gray-400">Términos y condiciones</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+</html>
