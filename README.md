@@ -1,15 +1,18 @@
 # landingpage-lab-04
-# Mi opinión sobre frameworks de CSS  
+
+## Mi opinión sobre frameworks de CSS  
 
 Para mí, el framework con el que me he sentido más cómodo trabajando es **Tailwind CSS**.  
 En mi opinión, para hacer un código, hay más maneras u opciones para darle diseño al HTML.  
 
 ---
 
-## 📌 Comandos esenciales de Git  
+## Comandos esenciales de Git  
 
-### 🔹 Configuración y estado  
+### Configuración y estado  
+
 ```bash
+
 git init                      # Inicializa un repositorio Git en una carpeta  
 git status                    # Muestra los cambios y el estado del repositorio  
 git log                       # Muestra el historial de commits  
@@ -47,7 +50,7 @@ git checkout main               # Cambia a la rama principal
 git pull origin main            # Descarga los últimos cambios  
 git merge nombre-rama           # Fusiona la rama en la principal  
 git push origin main            # Sube los cambios al repositorio  
-Si necesitas ayuda con un caso específico (conflictos, múltiples ramas, etc.), dime y lo resolvemos. 🚀
+
 
 
 
