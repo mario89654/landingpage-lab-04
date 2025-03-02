@@ -6,13 +6,10 @@
     <title>Compra - Knives</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .navbar-brand {
-            margin-left: 70px;
-            color: white;
-            font-weight: bold;
-        }
-        .sidebar-container {
-            margin-left: 0;
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         .card img {
             height: 200px;
@@ -22,45 +19,31 @@
         .card img:hover {
             transform: scale(1.05);
         }
-        .card a.btn {
-            transition: background-color 0.3s ease-in-out, transform 0.2s;
+        .card-body {
+            flex-grow: 1;
         }
-        .card a.btn:hover {
-            background-color: #0056b3;
-            transform: scale(1.1);
-        }
-        .sidebar-container ul li a {
-            display: block;
-            transition: color 0.3s ease-in-out, transform 0.2s;
-        }
-        .sidebar-container ul li a:hover {
-            color: #007bff;
-            transform: scale(1.1);
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .container-fluid {
-            flex: 1;
-        }
-        footer {
-            margin-top: auto;
+        .sidebar-container h2 {
+            font-style: georgia;
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #black;
+            text-transform: uppercase;
+            text-align: center;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 5px;
         }
     </style>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header>
-        
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html">Knives</a>
+                <a class="navbar-brand ms-5 fw-bold text-white" href="./index.html">Knives</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>  
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">-->
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link active" href="./compra.html">Compra</a></li>
                         <li class="nav-item"><a class="nav-link" href="./testimonios.html">Testimonios</a></li>
@@ -71,11 +54,11 @@
         </nav>
     </header>
     
-    <div class="container-fluid mt-4">
+    <div class="container-fluid mt-4 flex-grow-1">
         <div class="row">
-            <aside class="col-md-3 sidebar-container">
-                <div class="card p-3">
-                    <h2>Opciones de compra</h2>
+            <aside class="col-md-3 p-0">
+                <div class="card p-3 sidebar-container">
+                    <h2>Opciones de Compra</h2>
                     <ul class="list-unstyled">
                         <li>Seleccionar variante</li>
                         <li><a href="https://wa.me/51939814802" target="_blank">Cálculo de envío</a></li>
@@ -86,8 +69,8 @@
             </aside>
             
             <main class="col-md-9">
-                <div class="row g-4">
-                    <div class="col-md-4">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
                         <div class="card">
                             <img src="https://i.pinimg.com/736x/23/af/49/23af49bc3825b0ee0d2a1af9f3aeb20c.jpg" class="card-img-top" alt="Cuchillo de Defensa">
                             <div class="card-body">
@@ -98,7 +81,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col">
                         <div class="card">
                             <img src="https://tse3.mm.bing.net/th?id=OIP.YDG1ezU3T7OT_BsixZKixAHaE8&pid=Api&P=0&h=180" class="card-img-top" alt="Cuchillo táctico">
                             <div class="card-body">
@@ -109,7 +92,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col">
                         <div class="card">
                             <img src="https://cdnx.jumpseller.com/ekol-cl/image/27125567/1_1_.png?1663206075" class="card-img-top" alt="Cuchillo Cobra Karambit">
                             <div class="card-body">
@@ -125,24 +108,9 @@
         </div>
     </div>
     
-    <footer class="bg-dark text-white text-center py-3 mt-4">
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
         <p>&copy; 2025 Knives. Todos los derechos son reservados.</p>
     </footer>
-    
-    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="paymentModalLabel">Pago con Tarjeta</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Ingrese los datos de su tarjeta para completar la compra.</p>
-                    <a href="https://www.paypal.com" class="btn btn-success" target="_blank">Pagar ahora</a>
-                </div>
-            </div>
-        </div>
-    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
